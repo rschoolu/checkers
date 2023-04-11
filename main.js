@@ -126,7 +126,9 @@ function makeAiMove() {
         win()
     }
     if (goodPieces.length < 1) {
-        tie()
+        if(yellowOcc > 0) {
+            tie()
+        }
     }
     // Choose a random piece and see the moves it has
     let randomPiece = goodPieces[Math.floor(Math.random()*goodPieces.length)]
