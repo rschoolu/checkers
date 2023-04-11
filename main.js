@@ -1,3 +1,33 @@
+/*
+
+-- CONFIG --
+
+Configure your game!
+
+Are you wanting to win a game easily? Enable the stupid f*cking "AI"!
+
+Do you wanna play against someone IRL? Disable AI and share the computer!
+
+
+*/
+
+let ai = true; // Do you want the "AI" to be enabled?
+
+
+// may add more in future.
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Checkers games in Javascript
 // random functions
 function childrenToArray(x) {
@@ -27,7 +57,6 @@ function tie() {
 // Variables
 const boardDiv = document.querySelector('#board');
 let turn = 1;
-let ai = false;
 const board = [
     [0,1,0,1,0,1,0,1],
     [1,0,1,0,1,0,1,0],
