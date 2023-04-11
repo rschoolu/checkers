@@ -381,11 +381,12 @@ function move(row,space) {
     }
 }
 function selectSpace(row,space,userInput) {
-    if (turn == -1) {
-        if (userInput == true) {
-            if((board[row][space] != 2 || board[row][space] != 4) && ai == true) {
-                return 0
-            }
+    if (userInput == true) {
+        if (turn == -1) {
+            return 0
+        }
+        if((board[row][space] != 2 || board[row][space] != 4) && ai == true) {
+            return 0
         }
     }
     if (board[row][space] == 0) {
