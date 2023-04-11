@@ -383,7 +383,9 @@ function move(row,space) {
 function selectSpace(row,space,userInput) {
     if (turn == -1) {
         if (userInput == true) {
-            return 0
+            if(board[row][space] != 2 || board[row][space] != 4) {
+                return 0
+            }
         }
     }
     if (board[row][space] == 0) {
