@@ -47,7 +47,7 @@ childrenToArray(boardDiv.children).forEach(element => {
         elementChild.addEventListener("click", (e)=>{
             if (turn == 1) {
                 knowWhatYouSelected(parseInt(element.id),parseInt(elementChild.id));
-                selectSpace(parseInt(element.id),parseInt(elementChild.id));
+                selectSpace(parseInt(element.id),parseInt(elementChild.id),true);
             }
             
         })
