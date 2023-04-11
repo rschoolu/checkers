@@ -1,0 +1,82 @@
+div.row div {
+    width: 50px;
+    height: 50px;
+    background: grey;
+    display: inline-block;
+    outline: 4px solid black;
+    z-index: 80;
+    position: relative;
+}
+div.row {
+    z-index: 70;
+    position: relative;
+}
+a.big {
+    font-size: 26;
+}
+div.checker {
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    border-radius: 100%;
+    outline: 0px solid black !important;
+    pointer-events: none;
+}
+div.checker[id="c0"] {
+    background: red;
+}
+div.checker[id="c1"] {
+    background: yellow;
+}
+div.checker[id="c3"] {
+    background-image: url('./queenRed.png');
+    background-size: cover;
+}
+div.checker[id="c2"] {
+    background-image: url('./queenBlack.png');
+    background-size: cover;
+}
+div#debugInfo {
+    position: absolute;
+    right: 100;
+    top: 100;
+    width: 250px;
+    border: 4px solid black;
+    padding: 20;
+    border-radius: 15px;
+}
+#board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(2);
+}
+#popup {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 200;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid black;
+}
+#popup button {
+    width: 200px;
+    height: 50px;
+    font-size: 20;
+    filter: drop-shadow(black 0px 0px 5px);
+    cursor: pointer;
+    background: lightgrey;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#popup button:hover {
+    transform: scale(1.1);
+}
+#popup h1 {
+    font-size: 50;
+    color: white;
+    filter: drop-shadow(black 0px 0px 5px);
+}
