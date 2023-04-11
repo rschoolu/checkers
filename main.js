@@ -27,7 +27,7 @@ function tie() {
 // Variables
 const boardDiv = document.querySelector('#board');
 let turn = 1;
-let ai = true;
+let ai = false;
 const board = [
     [0,1,0,1,0,1,0,1],
     [1,0,1,0,1,0,1,0],
@@ -45,11 +45,8 @@ const board = [
 childrenToArray(boardDiv.children).forEach(element => {
     childrenToArray(element.children).forEach(elementChild => {
         elementChild.addEventListener("click", (e)=>{
-            if (turn == 1) {
-                knowWhatYouSelected(parseInt(element.id),parseInt(elementChild.id));
-                selectSpace(parseInt(element.id),parseInt(elementChild.id),true);
-            }
-            
+            knowWhatYouSelected(parseInt(element.id),parseInt(elementChild.id));
+            selectSpace(parseInt(element.id),parseInt(elementChild.id),true);
         })
     });
 });
@@ -383,9 +380,18 @@ function move(row,space) {
 function selectSpace(row,space,userInput) {
     if (userInput == true) {
         if (turn == -1) {
+            if (ai == true) {
+                return 0
+            }
+        }
+    }
+    if (turn == 1) {
+        if((board[row][space] == "1" || board[row][space] == "3")) {
             return 0
         }
-        if((board[row][space] != 2 || board[row][space] != 4) && ai == true) {
+    }
+    if (turn == -1) {
+        if((board[row][space] == "2" || board[row][space] == "4")) {
             return 0
         }
     }
