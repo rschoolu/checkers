@@ -100,5 +100,16 @@
         <a>Space Data: </a><a id="spaceData">Click a space</a> <a>(</a><a id="spaceDataElab">None</a><a>)</a><br>
         <a>Possible Moves (janky ahh list): </a><a id="possibleMoves"></a>
     </div>
+    <div id="wot">
+        <button id="aiShowS">Show/Hide Settings</button>
+    </div>
+    <div id="options" class="infoBox" hidden>
+        <div>
+            <h2>AI Settings</h2>
+        <h3 id="deez">AI Enabled</h3>
+        <p>Enable and Disable AI Only on Red's Turn.</p>
+        <button onclick="ai = true; document.querySelector('#deez').innerHTML = 'AI Enabled';">Enable AI</button> <button onclick="ai = false; document.querySelector('#deez').innerHTML = 'AI Disabled';">Disable AI</button>
+        </div>
+    </div>
 </body>
 </html>

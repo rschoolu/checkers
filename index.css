@@ -35,6 +35,12 @@ div.checker[id="c3"] {
 div.checker[id="c2"] {
     background-image: url('./queenBlack.png');
     background-size: cover;
+    rotate: 180deg;
+}
+#aiShowS {
+    width: 200px;
+    height: 50px;
+    font-size: 15;
 }
 div.infoBox {
     width: 250px;

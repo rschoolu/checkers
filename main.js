@@ -1,32 +1,15 @@
-/*
+let ai = true;
 
--- CONFIG --
-
-Configure your game!
-
-Are you wanting to win a game easily? Enable the stupid f*cking "AI"!
-
-Do you wanna play against someone IRL? Disable AI and share the computer!
-
-
-*/
-
-let ai = true; // Do you want the "AI" to be enabled?
-
-
-// may add more in future.
-
-
-
-
-
-
-
-
-
-
-
-
+document.querySelector('#aiShowS').addEventListener('click', (e)=>{
+    if (document.querySelector('#options').hidden == true) {
+        document.querySelector('#options').hidden = false;
+        return 0;
+    }
+    if (document.querySelector('#options').hidden == false) {
+        document.querySelector('#options').hidden = true;
+        return 0;
+    }
+})
 
 // Checkers games in Javascript
 // random functions
@@ -124,6 +107,11 @@ function makeAiMove() {
     }
     if (yellowOcc == 0) {
         win()
+    }
+    if (yellowOcc > 0) {
+        if(goodPieces.length == 0) {
+            tie()
+        }
     }
     // Choose a random piece and see the moves it has
     let randomPiece = goodPieces[Math.floor(Math.random()*goodPieces.length)]
