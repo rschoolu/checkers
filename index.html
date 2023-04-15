@@ -12,7 +12,7 @@
         <h1></h1>
         <button onclick="location.reload()">Play again</button>
     </div>
-    <div id="board">
+    <div id="board" style="transform: translate(-50%,-50%) scale(2);">
         <div class="row" id="0">
             <div id="0"></div>
             <div id="1"></div>
@@ -109,6 +109,11 @@
         <h3 id="deez">AI Enabled</h3>
         <p>Enable and Disable AI Only on Red's Turn.</p>
         <button onclick="ai = true; document.querySelector('#deez').innerHTML = 'AI Enabled';">Enable AI</button> <button onclick="ai = false; document.querySelector('#deez').innerHTML = 'AI Disabled';">Disable AI</button>
+        </div>
+        <div>
+            <h2>Board Scaling</h2>
+            <h3>Changes scale of board</h3>
+            <a>1</a> <input type="range" id="boardScale" step="0.25" min="1" max="4" value="2"> <a>4</a>
         </div>
     </div>
 </body>

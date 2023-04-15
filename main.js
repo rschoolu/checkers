@@ -390,6 +390,8 @@ function move(row,space) {
     if (redOcc == 0) {
         lose()
     }
+    selectedSpace["row"] = null;
+    selectedSpace["space"] = null;
 }
 function selectSpace(row,space,userInput) {
     if (userInput == true) {
@@ -408,6 +410,9 @@ function selectSpace(row,space,userInput) {
         if((board[row][space] == "2" || board[row][space] == "4")) {
             return 0
         }
+    }
+    if (board[row][space] == 0 && selectedSpace["row"] == null && selectedSpace["space"] == null) {
+        return 0;
     }
     if (board[row][space] == 0) {
         let possibleMoves = getPossibleMoves(selectedSpace["row"],selectedSpace["space"]);
@@ -474,9 +479,13 @@ function updateGame() {
             }
         }
     }
+    boardDiv.style = "transform: translate(-50%,-50%) scale(" + document.querySelector('#boardScale').value + ");"
     childrenToArray(boardDiv.children).forEach((e)=>{
         e.style = "";
     })
+    if (selectedSpace["row"] == null && selectedSpace["space"] == null) {
+        return 0;
+    }
     let pMfSC = getPossibleMoves(selectedSpace["row"],selectedSpace["space"])
     for (const x of pMfSC) {
         getSpaceDiv(x["row"],x["space"]).style.outline = "4px solid yellow";
